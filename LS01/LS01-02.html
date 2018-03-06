@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=function(){
+        CanvasApp();
+    }
+    function CanvasApp(){
+        var theCanvas=document.getElementById("canvas");
+        var context = theCanvas.getContext('2d');
+        context.lineWidth = 5;
+        context.strokeStyle = "blue";
+        context.moveTo(20, 20);
+        context.lineTo(30,100);
+        context.lineTo(100,20);
+        context.stroke();
+
+        context.lineWidth = 50;
+            context.strokeStyle = "#ff0000";
+            context.beginPath();//思考：若没有这句话会怎样？
+            context.moveTo(0, 100);
+            context.lineTo(100, 200);
+            context.stroke();
+    }
+</script>
+<body>
+    <canvas id="canvas" width="200" height="200" style="border:3px solid #ccc">
+
+    </canvas>
+</body>
+</html>

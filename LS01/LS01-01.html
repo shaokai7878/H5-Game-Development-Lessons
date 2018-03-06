@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=function(){
+        canvasApp();
+    }
+    function canvasApp(){
+        var theCanvas = document.getElementById("canvas");
+        var context = theCanvas.getContext('2d');
+        context.fillStyle='red';
+        context.fillRect(0,0,100,100);
+        context.clearRect(25,25,50,50);
+            context.fillStyle = "#000000";
+            context.font = "20px Sans-Serif";
+            context.textBaseline = "top";
+            context.fillText("Hello World!", 0, 100);
+    }
+</script>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:5px solid #ccc">
+
+    </canvas>
+</body>
+</html>
