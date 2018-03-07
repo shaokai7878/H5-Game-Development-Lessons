@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=function(){
+        canvasApp();
+    }
+    function canvasApp(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle='red';
+        ctx.fillStyle='yellow';
+        ctx.moveTo(0,0);
+        ctx.quadraticCurveTo(50,50,0,100);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle='blue';
+        ctx.strokeStyle='red';
+        ctx.moveTo(200,200);
+        ctx.bezierCurveTo(200,300,300,200,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.fillStyle='blue';
+        ctx.strokeStyle='red';
+        ctx.moveTo(400,400);
+        ctx.bezierCurveTo(400,500,500,400,500,500);
+        ctx.fill();
+        ctx.stroke();  
+    }
+</script>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid #ccc">
+
+    </canvas>
+</body>
+</html>

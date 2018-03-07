@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            // canvasApp();
+            clipTest(200,200,100);
+        }
+        function clipTest(cx,cy,radius){
+            var theCanvas = document.getElementById('canvas');
+            var ctx = theCanvas.getContext('2d');
+            ctx.save();
+            //绘制第一个圆
+            ctx.beginPath();
+            ctx.fillStyle='tomato';
+            ctx.arc(cx,cy,radius,0,Math.PI*2,false);
+            ctx.fill();
+            ctx.clip();
+            //绘制第二个圆
+            ctx.beginPath();
+            ctx.fillStyle="#333";
+            ctx.arc(cx+100,cy,radius,0,Math.PI*2,false);
+            ctx.fill();
+            // ctx.clicp();
+            //绘制第三个圆
+            ctx.beginPath();
+            ctx.fillStyle = 'cornsilk';
+            ctx.arc(cx, cy + 100, radius, 0, Math.PI * 2, false);
+            ctx.fill(); 
+            // ctx.clip();
+            ctx.restore();
+            // 绘制第四个圆 
+            ctx.beginPath();
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 10;
+            ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.restore();
+        }
+</script>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</body>
+</html>
