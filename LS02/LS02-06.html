@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=function(){
+        canvasApp();
+    }
+    function canvasApp(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle='red';
+        ctx.fillRect(0,0,200,200);
+        
+        ctx.fillStyle="black";
+        ctx.fillRect(10,10,50,50);
+    }
+</script>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:3px solid #ccc">
+
+    </canvas>
+</body>
+</html>
